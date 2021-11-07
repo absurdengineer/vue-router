@@ -5,7 +5,7 @@ import JobDetails from "../views/jobs/JobDetails.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
   },
@@ -28,6 +28,11 @@ const routes = [
     name: "JobDetails",
     component: JobDetails,
     props: true,
+  },
+  // redirects
+  {
+    path: "/",
+    redirect: "/home",
   },
 ];
 
