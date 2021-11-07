@@ -23,6 +23,10 @@ const routes = [
     path: "/jobs",
     name: "Jobs",
     component: Jobs,
+    beforeEnter(to, from, next) {
+      if (localStorage.getItem("token")) next();
+      else next({ path: "About" });
+    },
   },
   {
     path: "/jobs/:id",

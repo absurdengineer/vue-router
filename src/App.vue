@@ -1,4 +1,5 @@
 <template>
+  <button @click="authenticate" class="bg-green">Login</button>
   <div id="nav">
     <router-link to="/home">Home</router-link> |
     <router-link to="/about">About</router-link> |
@@ -41,10 +42,18 @@ button {
   border: none;
   border-radius: 4px;
 }
+.bg-green {
+  background: #48b883;
+}
 </style>
 
 <script>
 export default {
+  data() {
+    return {
+      authenticated: false,
+    };
+  },
   methods: {
     redirect() {
       this.$router.push({ name: "Home" });
@@ -54,6 +63,11 @@ export default {
     },
     back() {
       this.$router.go(-1);
+    },
+  },
+  methods: {
+    authenticate() {
+      localStorage.setItem("token", "dsgjlbljbiusfbuidsbidsubsduibn");
     },
   },
 };
