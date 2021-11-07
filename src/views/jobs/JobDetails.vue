@@ -7,11 +7,6 @@
 export default {
   name: "JobDetails",
   props: ["id"],
-  data() {
-    return {
-      id: this.id,
-    };
-  },
 };
 </script>
 
